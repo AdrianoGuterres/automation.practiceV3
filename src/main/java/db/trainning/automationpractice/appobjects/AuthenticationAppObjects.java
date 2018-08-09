@@ -1,9 +1,6 @@
 package db.trainning.automationpractice.appobjects;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,33 +13,22 @@ public class AuthenticationAppObjects {
 	}
 
 	public WebElement getCreateAccoundEmailTextField() {		
-		WebElement element = this.driver.findElement(By.id("email_create"));
-		return element;
+		return this.driver.findElement(By.id("email_create"));
 	}
-
 
 	public WebElement getCreateAnAccountButton() {
-		WebElement element = this.driver.findElement(By.id("SubmitCreate"));		
-		return     element;
-	}
-	
-	
+		return this.driver.findElement(By.id("SubmitCreate"));		
+	}	
 	
 	public WebElement getAlreadyRegisteredEmailTextField() {		
-		WebElement element = this.driver.findElement(By.id("email"));
-		return element;
+		return this.driver.findElement(By.id("email"));
 	}
 	
 	public WebElement getAlreadyRegisteredPasswordTextField() {		
-		WebElement element = this.driver.findElement(By.id("passwd"));
-		return element;
+		return this.driver.findElement(By.id("passwd"));
 	}
 	
-	
-	
-	
 	public WebElement getAlreadyRegisteredSignInButton() {
-		WebElement element = this.driver.findElement(By.id("SubmitLogin"));		
-		return element;
+		return this.driver.findElement(By.id("SubmitLogin"));
 	}
 }

@@ -11,8 +11,7 @@ public class AuthenticationTask {
 	private AuthenticationAppObjects authenticationAppObjects;
 	
 	public AuthenticationTask(WebDriver driver) {
-		this.driver = driver;			
-		
+		this.driver = driver;					
 		this.authenticationAppObjects = new AuthenticationAppObjects(this.driver);
 	}
 
@@ -21,18 +20,13 @@ public class AuthenticationTask {
 	}
 
 	public void clickCreateAnAccountButton() {
-		this.authenticationAppObjects.getCreateAnAccountButton().click();
-		
-	}
+		this.authenticationAppObjects.getCreateAnAccountButton().click();		
+	}	
 	
-	
-	public void fillAlreadyRegisteredForm(String email, String password) {
-		
-		this.authenticationAppObjects.getAlreadyRegisteredEmailTextField().sendKeys(email);
-		
+	public void fillAlreadyRegisteredForm(String email, String password) {		
+		this.authenticationAppObjects.getAlreadyRegisteredEmailTextField().sendKeys(email);		
 		this.authenticationAppObjects.getAlreadyRegisteredPasswordTextField().sendKeys(password);		
-	}
-	
+	}	
 	
 	public void clickAlreadyRegisteredSignInButton() {
 		this.authenticationAppObjects.getAlreadyRegisteredSignInButton().click();		

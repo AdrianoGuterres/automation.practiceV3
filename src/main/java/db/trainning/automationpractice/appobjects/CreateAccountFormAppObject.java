@@ -4,27 +4,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import db.trainning.automationpractice.ressources.DevTools;
+import db.trainning.automationpractice.util.DevTools;
 
 public class CreateAccountFormAppObject {
 	
 	private WebDriver driver;
 	
-	public CreateAccountFormAppObject(WebDriver driver) {
-		
+	public CreateAccountFormAppObject(WebDriver driver) {		
 		this.driver = driver;		
 	}
 	
-	public WebElement getFirstNameTextField() {
-		
+	public WebElement getFirstNameTextField() {		
 		return DevTools.waitForClickability(this.driver, By.id("customer_firstname"));
-	}
-		
+	}		
 	
 	public WebElement getLastNameTextField() {
 		return this.driver.findElement(By.id("customer_lastname"));
-	}
-		
+	}		
 	
 	public WebElement getPasswordTextField() {
 		return this.driver.findElement(By.id("passwd"));
@@ -44,8 +40,7 @@ public class CreateAccountFormAppObject {
 	
 	public WebElement getPostalCodeTextField() {
 		return this.driver.findElement(By.id("postcode"));
-	}
-	
+	}	
 	
 	public WebElement getCountryComboBox() {
 		return this.driver.findElement(By.id("id_country"));

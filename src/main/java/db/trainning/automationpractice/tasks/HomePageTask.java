@@ -6,16 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import db.trainning.automationpractice.appobjects.HomePageAppObject;
-import db.trainning.automationpractice.ressources.DevTools;
+import db.trainning.automationpractice.util.DevTools;
 
 public class HomePageTask {
 
 	private WebDriver driver;
-
 	private HomePageAppObject homePageAppObject;
 
 	public HomePageTask(WebDriver driver) {
-
 		this.driver = driver;
 		this.homePageAppObject = new HomePageAppObject(this.driver);
 	}
@@ -24,18 +22,13 @@ public class HomePageTask {
 		this.homePageAppObject.getSignInButton().click();				
 	}
 
-
 	public void selectOneProduct(String title) {
-
-		ArrayList<WebElement> productList = this.homePageAppObject.getAllProductList();
-
+		ArrayList<WebElement> productList = (ArrayList<WebElement>) this.homePageAppObject.getAllProductList();
 		for(WebElement x : productList) {
 			if(x.getText().contains(title)) {
-
-				DevTools.moveToElement(this.driver, x);							
+				DevTools.moveToElement(this.driver, x);						
 			}			
 		}
-
 	}
 
 	public void clickAddToCartAnyProductButton() {
@@ -47,10 +40,6 @@ public class HomePageTask {
 	}
 
 	public void clickSelectedProductElement() {
-
 		this.homePageAppObject.getQuickViewButton().click();
-
 	}
-
-
 }

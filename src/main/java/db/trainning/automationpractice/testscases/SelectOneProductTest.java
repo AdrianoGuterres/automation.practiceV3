@@ -5,30 +5,24 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-import db.trainning.automationpractice.ressources.*;
-import db.trainning.automationpractice.tasks.*;
+import db.trainning.automationpractice.tasks.HomePageTask;
+import db.trainning.automationpractice.util.DriverSetup;
 
 public class SelectOneProductTest {
 	
-	private WebDriver driver;
-	
+	private WebDriver driver;	
 	private HomePageTask homePageTask;	
 	
 	@Before		
-	public void setUp() {
-		
-		this.driver = DriverSetup.getWebDriverConfiguredForChrome("http://automationpractice.com/index.php");
-		
+	public void setUp() {		
+		this.driver = DriverSetup.getWebDriverConfiguredForChrome("http://automationpractice.com/index.php");		
 		this.homePageTask = new HomePageTask(this.driver);
 	} 
 
 	@Test
-	public void main(){
-		
-		this.homePageTask.selectOneProduct("Faded Short Sleeve T-shirts");
-		
-		this.homePageTask.clickSelectedProductElement();
-		
+	public void run(){		
+		this.homePageTask.selectOneProduct("Faded Short Sleeve T-shirts");		
+		this.homePageTask.clickSelectedProductElement();		
 	}
 	
 	@After 
@@ -36,5 +30,4 @@ public class SelectOneProductTest {
 		this.driver.close();
 		this.driver.quit();
 	}
-
 }

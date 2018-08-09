@@ -1,12 +1,12 @@
 package db.trainning.automationpractice.appobjects;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import db.trainning.automationpractice.ressources.DevTools;
+import db.trainning.automationpractice.util.DevTools;
 
 public class HomePageAppObject {
 	
@@ -20,13 +20,9 @@ public class HomePageAppObject {
 		return this.driver.findElement(By.className("login"));
 	}
 	
-	public ArrayList<WebElement> getAllProductList() {
-		
-		WebElement element = this.driver.findElement(By.id("homefeatured"));		
-		
-		ArrayList<WebElement> itens = (ArrayList<WebElement>) element.findElements(By.tagName("li"));
-		
-		return itens;
+	public List<WebElement> getAllProductList() {		
+		WebElement element = this.driver.findElement(By.id("homefeatured"));			
+		return element.findElements(By.tagName("li"));
 	}
 	
 	public WebElement getAddToCartButton() {
@@ -34,14 +30,11 @@ public class HomePageAppObject {
 	}
 	
 	public WebElement getProcessedToCheckoutButton() {
-		return DevTools.waitForClickability(this.driver,By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a"));
-		
+		return DevTools.waitForClickability(this.driver,By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a"));		
 	}
 	
-	public WebElement getQuickViewButton() {
-		
-		return DevTools.waitForClickability(this.driver, By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.left-block > div > a.quick-view"));
-		
+	public WebElement getQuickViewButton() {		
+		return DevTools.waitForClickability(this.driver, By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.left-block > div > a.quick-view"));		
 	}
 
 }

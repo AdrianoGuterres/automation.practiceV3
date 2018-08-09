@@ -1,6 +1,7 @@
 package db.trainning.automationpractice.testsuites;
 
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -15,9 +16,9 @@ import db.trainning.automationpractice.testscases.SelectOneProductTest;
 	CreateAccountTest.class,
 	LoginTest.class,
 	AddOneProductToCartTest.class,
-	SelectOneProductTest.class
-	
+	SelectOneProductTest.class	
 })
+
 public class AllTests {
 	
 	@BeforeClass
@@ -29,5 +30,4 @@ public class AllTests {
 	public static void tearDown() {
 		
 	}
-
 }
