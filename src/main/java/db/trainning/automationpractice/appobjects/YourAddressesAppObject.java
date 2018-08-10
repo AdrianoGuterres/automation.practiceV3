@@ -4,25 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import db.trainning.automationpractice.utils.DevTools;
-
-public class CreateAccountFormAppObject {	
+public class YourAddressesAppObject {	
 	private WebDriver driver;
 	
-	public CreateAccountFormAppObject(WebDriver driver) {		
+	public YourAddressesAppObject(WebDriver driver) {
 		this.driver = driver;		
-	}
-	
-	public WebElement getFirstNameTextField() {		
-		return DevTools.waitUntilFifteenSecondsForClickability(this.driver, By.id("customer_firstname"));
-	}		
-	
-	public WebElement getLastNameTextField() {
-		return this.driver.findElement(By.id("customer_lastname"));
-	}		
-	
-	public WebElement getPasswordTextField() {
-		return this.driver.findElement(By.id("passwd"));
 	}
 	
 	public WebElement getAddressTextField() {
@@ -36,24 +22,24 @@ public class CreateAccountFormAppObject {
 	public WebElement getStateComboBox() {
 		return this.driver.findElement(By.id("id_state"));
 	}
-	
+		
 	public WebElement getPostalCodeTextField() {
 		return this.driver.findElement(By.id("postcode"));
-	}	
-	
-	public WebElement getCountryComboBox() {
-		return this.driver.findElement(By.id("id_country"));
 	}
 	
 	public WebElement getMobilePhoneTextField() {
 		return this.driver.findElement(By.id("phone_mobile"));
-	}
+	}	
 	
-	public WebElement getAliasAddressTextField() {
+	public WebElement getAliasTextField() {
 		return this.driver.findElement(By.id("alias"));
 	}
+
+	public WebElement getHomePhoneTextField() {
+		return this.driver.findElement(By.id("phone"));
+	}
 	
-	public WebElement getRegisterButton() {
-		return this.driver.findElement(By.id("submitAccount"));
-	}	
+	public WebElement getSaveButton() {
+		return this.driver.findElement(By.id("submitAddress"));
+	}
 }

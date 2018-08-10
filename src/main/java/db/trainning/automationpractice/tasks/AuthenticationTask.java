@@ -4,8 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import db.trainning.automationpractice.appobjects.AuthenticationAppObjects;
 
-public class AuthenticationTask {
-	
+public class AuthenticationTask {	
 	private WebDriver driver;
 	
 	private AuthenticationAppObjects authenticationAppObjects;
@@ -31,6 +30,4 @@ public class AuthenticationTask {
 	public void clickAlreadyRegisteredSignInButton() {
 		this.authenticationAppObjects.getAlreadyRegisteredSignInButton().click();		
 	}
-	
-
 }

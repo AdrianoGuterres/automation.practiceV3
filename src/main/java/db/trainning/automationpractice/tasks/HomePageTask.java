@@ -6,10 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import db.trainning.automationpractice.appobjects.HomePageAppObject;
-import db.trainning.automationpractice.util.DevTools;
+import db.trainning.automationpractice.utils.DevTools;
 
 public class HomePageTask {
-
 	private WebDriver driver;
 	private HomePageAppObject homePageAppObject;
 

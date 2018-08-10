@@ -6,10 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import db.trainning.automationpractice.util.DevTools;
+import db.trainning.automationpractice.utils.DevTools;
 
-public class HomePageAppObject {
-	
+public class HomePageAppObject {	
 	private WebDriver driver;
 	
 	public HomePageAppObject(WebDriver driver) {
@@ -17,7 +16,7 @@ public class HomePageAppObject {
 	}
 	
 	public WebElement getSignInButton() {
-		return this.driver.findElement(By.className("login"));
+		return DevTools.waitUntilFifteenSecondsForClickability(driver, By.className("login"));
 	}
 	
 	public List<WebElement> getAllProductList() {		
@@ -30,11 +29,10 @@ public class HomePageAppObject {
 	}
 	
 	public WebElement getProcessedToCheckoutButton() {
-		return DevTools.waitForClickability(this.driver,By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a"));		
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.cssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a"));		
 	}
 	
 	public WebElement getQuickViewButton() {		
-		return DevTools.waitForClickability(this.driver, By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.left-block > div > a.quick-view"));		
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver, By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.left-block > div > a.quick-view"));		
 	}
-
 }

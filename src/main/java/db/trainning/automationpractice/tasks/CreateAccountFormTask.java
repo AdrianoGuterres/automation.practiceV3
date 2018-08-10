@@ -3,10 +3,9 @@ package db.trainning.automationpractice.tasks;
 import org.openqa.selenium.WebDriver;
 
 import db.trainning.automationpractice.appobjects.CreateAccountFormAppObject;
-import db.trainning.automationpractice.util.DevTools;
+import db.trainning.automationpractice.utils.DevTools;
 
 public class CreateAccountFormTask {
-
 	private WebDriver driver;
 	private CreateAccountFormAppObject createAccountFormAppObject;
 
@@ -28,8 +27,8 @@ public class CreateAccountFormTask {
 		this.createAccountFormAppObject.getAliasAddressTextField().clear();	
 		this.createAccountFormAppObject.getAliasAddressTextField().sendKeys(aliasAddress);		
 		
-		DevTools.selectItemInComboBox(this.createAccountFormAppObject.getStateComboBox(), state);		
-		DevTools.selectItemInComboBox(this.createAccountFormAppObject.getCountryComboBox(), country);		
+		DevTools.selectItemForVisibleTextInComboBox(this.createAccountFormAppObject.getStateComboBox(), state);		
+		DevTools.selectItemForVisibleTextInComboBox(this.createAccountFormAppObject.getCountryComboBox(), country);		
 	}	
 	
 	public void clickRegisterButton() {		

@@ -8,17 +8,13 @@ import org.openqa.selenium.WebDriver;
 import db.trainning.automationpractice.tasks.AuthenticationTask;
 import db.trainning.automationpractice.tasks.CreateAccountFormTask;
 import db.trainning.automationpractice.tasks.HomePageTask;
-import db.trainning.automationpractice.util.DevTools;
-import db.trainning.automationpractice.util.DriverSetup;
+import db.trainning.automationpractice.utils.DevTools;
+import db.trainning.automationpractice.utils.DriverSetup;
 
-public class CreateAccountTest {
-	
-	private WebDriver driver;
-	
-	private HomePageTask			homePageTask;
-	
-	private AuthenticationTask		authenticationTask ;
-	
+public class CreateAccountTestCase {	
+	private WebDriver               driver;	
+	private HomePageTask		    homePageTask;	
+	private AuthenticationTask		authenticationTask ;	
 	private CreateAccountFormTask 	createAccountFormTask;
 	
 	@Before		
@@ -38,8 +34,7 @@ public class CreateAccountTest {
 		this.authenticationTask.clickCreateAnAccountButton();
 		
 		this.createAccountFormTask.fillCreateAccountForm("Jhon", "Doe", "1234567", "Nonsense street", "Paradise City", "12345", "55-99999999", "Limbo", "Iowa", "United States");		
-		this.createAccountFormTask.clickRegisterButton();		
-		
+		this.createAccountFormTask.clickRegisterButton();			
 	}
 	
 	@After 

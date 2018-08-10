@@ -1,4 +1,4 @@
-package db.trainning.automationpractice.util;
+package db.trainning.automationpractice.utils;
 
 import java.util.Random;
 
@@ -11,15 +11,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DevTools {
-
+	
 	public static String getNewEmailAddress() {
-		Random random = new Random();
-		
+		Random random = new Random();		
 		String base = "abcdefghijklmnopqrstuvxz";
-
 		String user = "";
 		String domain = "";
-
 		int indexUser   = 0;
 		int indexDomain = 0;
 
@@ -32,13 +29,33 @@ public class DevTools {
 		}	
 		return user +"@"+domain+".com.br";
 	}
+	
+	public static String getNewAlias() {
+		Random random = new Random();		
+		String base = "abcdefghijklmnopqrstuvxz";
+		
+		String firstPart = "";
+		String secondPart = "";
+		
+		int indexFirst   = 0;
+		int indexSecond = 0;
 
-	public static void selectItemInComboBox(WebElement comboBox, String item) {
+		for(int i = 0; i <10 ; i++) {
+			indexFirst   = random.nextInt(base.length() -1);
+			indexSecond = random.nextInt(base.length() -1);
+
+			firstPart	 = firstPart + base.substring(indexFirst, indexFirst+1);
+			secondPart   = secondPart + base.substring(indexSecond, indexSecond +1);
+		}	
+		return firstPart +" "+secondPart;
+	}
+
+	public static void selectItemForVisibleTextInComboBox(WebElement comboBox, String item) {
 		Select select = new Select(comboBox);
 		select.selectByVisibleText(item);	
 	}
 
-	public static WebElement waitForClickability(WebDriver driver, By locator) {
+	public static WebElement waitUntilFifteenSecondsForClickability(WebDriver driver, By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, 15); 
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));		
 	}
@@ -48,5 +65,4 @@ public class DevTools {
 		actions.moveToElement(element);
 		actions.perform();		
 	}	
-
 }

@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class AuthenticationAppObjects {
-
 	private WebDriver driver;
 
 	public AuthenticationAppObjects(WebDriver driver) {

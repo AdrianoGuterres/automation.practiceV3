@@ -6,17 +6,21 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import db.trainning.automationpractice.testscases.AddOneProductToCartTest;
-import db.trainning.automationpractice.testscases.CreateAccountTest;
-import db.trainning.automationpractice.testscases.LoginTest;
-import db.trainning.automationpractice.testscases.SelectOneProductTest;
+import db.trainning.automationpractice.testscases.AddNewDeliveryAddress;
+import db.trainning.automationpractice.testscases.AddOneProductToCartTestCase;
+import db.trainning.automationpractice.testscases.CreateAccountTestCase;
+import db.trainning.automationpractice.testscases.FinalisePurchaseTestCase;
+import db.trainning.automationpractice.testscases.LoginTestCase;
+import db.trainning.automationpractice.testscases.SelectOneProductTestCase;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	CreateAccountTest.class,
-	LoginTest.class,
-	AddOneProductToCartTest.class,
-	SelectOneProductTest.class	
+	AddNewDeliveryAddress.class,
+	AddOneProductToCartTestCase.class,
+	CreateAccountTestCase.class,
+	FinalisePurchaseTestCase.class,
+	LoginTestCase.class,	
+	SelectOneProductTestCase.class 	
 })
 
 public class AllTests {

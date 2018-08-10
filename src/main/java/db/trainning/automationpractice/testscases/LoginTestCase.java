@@ -1,13 +1,15 @@
 package db.trainning.automationpractice.testscases;
 
-import org.junit.*;
-import org.openqa.selenium.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 
-import db.trainning.automationpractice.tasks.*;
-import db.trainning.automationpractice.util.*;
+import db.trainning.automationpractice.tasks.AuthenticationTask;
+import db.trainning.automationpractice.tasks.HomePageTask;
+import db.trainning.automationpractice.utils.DriverSetup;
 
-public class LoginTest {
-	
+public class LoginTestCase {	
 	private WebDriver			driver;	
 	private HomePageTask		homePageTask;	
 	private AuthenticationTask	authenticationTask ;
