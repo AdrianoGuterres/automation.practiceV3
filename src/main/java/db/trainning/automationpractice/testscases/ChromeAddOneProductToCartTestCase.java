@@ -5,10 +5,14 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
+import com.aventstack.extentreports.Status;
+
 import db.trainning.automationpractice.tasks.HomePageTask;
 import db.trainning.automationpractice.utils.DriverSetup;
+import db.trainning.automationpractice.utils.Report;
+import db.trainning.automationpractice.utils.ScreenShot;
 
-public class AddOneProductToCartTestCase {	
+public class ChromeAddOneProductToCartTestCase {	
 	private WebDriver driver;	
 	private HomePageTask homePageTask;	
 	
@@ -16,18 +20,22 @@ public class AddOneProductToCartTestCase {
 	public void setUp() {
 		this.driver = DriverSetup.getWebDriverConfiguredForChrome("http://automationpractice.com/index.php");		
 		this.homePageTask = new HomePageTask(this.driver);
+		
+		Report.startTest("(Chrome) Add One Product To Cart.");	
+		Report.log(Status.INFO, "The test is running.", ScreenShot.capture(this.driver));
 	} 
 
 	@Test
-	public void testMain(){		
+	public void testMain(){					
 		this.homePageTask.selectOneProduct("Faded Short Sleeve T-shirts");		
 		this.homePageTask.clickAddToCartAnyProductButton();		
-		this.homePageTask.clickProceedToCheckoutButton();		
+		this.homePageTask.clickProceedToCheckoutButton();			
 	}
 	
 	@After 
-	public void tearDown() {		
-		this.driver.close();
+	public void tearDown() {	
+		Report.log(Status.INFO, "This test is over. ", ScreenShot.capture(this.driver));
+		
 		this.driver.quit();
 	}
 }

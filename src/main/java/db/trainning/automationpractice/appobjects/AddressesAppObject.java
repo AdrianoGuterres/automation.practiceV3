@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import db.trainning.automationpractice.utils.DevTools;
+
 public class AddressesAppObject {	
 	private WebDriver driver;
 	
@@ -12,32 +14,33 @@ public class AddressesAppObject {
 	}
 	
 	public WebElement getProcessAddressButton() {
-		return this.driver.findElement(By.name("processAddress"));
+		return this.driver.findElement(By.cssSelector("#center_column > form > p > button"));
 	}
 	
 	public WebElement getAddressesComboBox() {
+				
+		//DevTools.moveToElementByActionPerform(this.driver, By.id("Choose a delivery address:"));
+		
 		return this.driver.findElement(By.id("id_address_delivery"));
 	}
 	
 	public WebElement getAliasField() {
-		return this.driver.findElement(By.xpath("//*[@id=\"address_delivery\"]/li[3]"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.xpath("//*[@id=\"address_delivery\"]/li[3]"));
 	}
 	
 	public WebElement getAddressField() {
-		return this.driver.findElement(By.xpath("//*[@id=\"address_delivery\"]/li[4]"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.xpath("//*[@id=\"address_delivery\"]/li[4]"));
 	}
 	
 	public WebElement getCountryField() {
-		return this.driver.findElement(By.xpath("//*[@id=\"address_delivery\"]/li[5]"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.xpath("//*[@id=\"address_delivery\"]/li[5]"));
 	}
 	
 	public WebElement getPhoneField() {
-		return this.driver.findElement(By.xpath("//*[@id=\"address_delivery\"]/li[6]"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.xpath("//*[@id=\"address_delivery\"]/li[6]"));
 	}
 	
 	public WebElement getPhoneMobileField() {
-		return this.driver.findElement(By.xpath("//*[@id=\"address_delivery\"]/li[7]"));
-	}
-	
-	
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.xpath("//*[@id=\"address_delivery\"]/li[7]"));
+	}	
 }

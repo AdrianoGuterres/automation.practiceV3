@@ -2,7 +2,12 @@ package db.trainning.automationpractice.tasks;
 
 import org.openqa.selenium.WebDriver;
 
+import com.aventstack.extentreports.Status;
+
 import db.trainning.automationpractice.appobjects.ShoppingCartSummaryAppObject;
+import db.trainning.automationpractice.utils.DevTools;
+import db.trainning.automationpractice.utils.Report;
+import db.trainning.automationpractice.utils.ScreenShot;
 
 public class ShoppingCartSummaryTask {
 	private WebDriver driver;	
@@ -14,6 +19,7 @@ public class ShoppingCartSummaryTask {
 	}
 	
 	public void clickProceedToCheckoutButton() {
-		this.shoppingCartSummaryAppObject.getProceedToCheckoutButton().click();
+		DevTools.clickButtonWithJSExecutor(this.driver, this.shoppingCartSummaryAppObject.getProceedToCheckoutButton());
+		Report.log(Status.INFO, "", ScreenShot.capture(this.driver));
 	}
 }

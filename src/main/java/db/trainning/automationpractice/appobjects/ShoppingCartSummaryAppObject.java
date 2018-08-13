@@ -12,6 +12,6 @@ public class ShoppingCartSummaryAppObject {
 	}
 	
 	public WebElement getProceedToCheckoutButton() {
-		return this.driver.findElement(By.partialLinkText("Proceed to checkout"));
+		return this.driver.findElement(By.cssSelector(".standard-checkout"));
 	}
 }

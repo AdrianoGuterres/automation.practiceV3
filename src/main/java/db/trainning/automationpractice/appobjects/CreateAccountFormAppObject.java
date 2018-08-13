@@ -18,19 +18,19 @@ public class CreateAccountFormAppObject {
 	}		
 	
 	public WebElement getLastNameTextField() {
-		return this.driver.findElement(By.id("customer_lastname"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("customer_lastname"));
 	}		
 	
 	public WebElement getPasswordTextField() {
-		return this.driver.findElement(By.id("passwd"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("passwd"));
 	}
 	
 	public WebElement getAddressTextField() {
-		return this.driver.findElement(By.id("address1"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("address1"));
 	}
 	
 	public WebElement getCityTextField() {
-		return this.driver.findElement(By.id("city"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("city"));
 	}
 	
 	public WebElement getStateComboBox() {
@@ -38,7 +38,7 @@ public class CreateAccountFormAppObject {
 	}
 	
 	public WebElement getPostalCodeTextField() {
-		return this.driver.findElement(By.id("postcode"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("postcode"));
 	}	
 	
 	public WebElement getCountryComboBox() {
@@ -46,14 +46,14 @@ public class CreateAccountFormAppObject {
 	}
 	
 	public WebElement getMobilePhoneTextField() {
-		return this.driver.findElement(By.id("phone_mobile"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("phone_mobile"));
 	}
 	
 	public WebElement getAliasAddressTextField() {
-		return this.driver.findElement(By.id("alias"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("alias"));
 	}
 	
 	public WebElement getRegisterButton() {
-		return this.driver.findElement(By.id("submitAccount"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("submitAccount"));
 	}	
 }

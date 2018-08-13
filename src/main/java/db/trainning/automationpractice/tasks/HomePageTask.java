@@ -5,8 +5,12 @@ import java.util.ArrayList;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.aventstack.extentreports.Status;
+
 import db.trainning.automationpractice.appobjects.HomePageAppObject;
 import db.trainning.automationpractice.utils.DevTools;
+import db.trainning.automationpractice.utils.Report;
+import db.trainning.automationpractice.utils.ScreenShot;
 
 public class HomePageTask {
 	private WebDriver driver;
@@ -18,7 +22,8 @@ public class HomePageTask {
 	}
 
 	public void clickSignInButton(){
-		this.homePageAppObject.getSignInButton().click();				
+		this.homePageAppObject.getSignInButton().click();		
+		Report.log(Status.INFO, "", ScreenShot.capture(this.driver));
 	}
 
 	public void selectOneProduct(String title) {
@@ -28,17 +33,21 @@ public class HomePageTask {
 				DevTools.moveToElement(this.driver, x);						
 			}			
 		}
+		Report.log(Status.INFO, "", ScreenShot.capture(this.driver));
 	}
 
 	public void clickAddToCartAnyProductButton() {
 		this.homePageAppObject.getAddToCartButton().click();
+		Report.log(Status.INFO, "", ScreenShot.capture(this.driver));
 	}
 
 	public void clickProceedToCheckoutButton() {
 		this.homePageAppObject.getProcessedToCheckoutButton().click();
+		Report.log(Status.INFO, "", ScreenShot.capture(this.driver));
 	}
 
 	public void clickSelectedProductElement() {
 		this.homePageAppObject.getQuickViewButton().click();
+		Report.log(Status.INFO, "", ScreenShot.capture(this.driver));
 	}
 }

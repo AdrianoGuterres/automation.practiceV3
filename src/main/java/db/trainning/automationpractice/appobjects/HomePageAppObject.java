@@ -25,7 +25,7 @@ public class HomePageAppObject {
 	}
 	
 	public WebElement getAddToCartButton() {
-		return this.driver.findElement(By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.cssSelector("#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default"));
 	}
 	
 	public WebElement getProcessedToCheckoutButton() {

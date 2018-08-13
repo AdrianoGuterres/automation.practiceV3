@@ -3,6 +3,7 @@ package db.trainning.automationpractice.utils;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -64,5 +65,30 @@ public class DevTools {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element);
 		actions.perform();		
+	}
+
+	public static WebElement waitUntilFifteenSecondsForClickability(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, 15); 
+		return wait.until(ExpectedConditions.elementToBeClickable(element));	
 	}	
+	
+	public static void clickButtonWithJSExecutor(WebDriver driver, By locator) {
+		WebElement element = driver.findElement(locator);
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);		
+	}
+	
+	public static void clickButtonWithJSExecutor(WebDriver driver, WebElement element) {
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);		
+	}
+	
+	public static void moveToElementByActionPerform(WebDriver driver, By locator) {	
+
+		WebElement element = driver.findElement(locator);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element);
+		actions.perform();		
+	}	
+	
 }

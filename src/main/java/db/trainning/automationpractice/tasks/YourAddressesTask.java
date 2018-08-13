@@ -1,10 +1,13 @@
 package db.trainning.automationpractice.tasks;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
+
+import com.aventstack.extentreports.Status;
 
 import db.trainning.automationpractice.appobjects.YourAddressesAppObject;
 import db.trainning.automationpractice.utils.DevTools;
+import db.trainning.automationpractice.utils.Report;
+import db.trainning.automationpractice.utils.ScreenShot;
 
 public class YourAddressesTask {
 	private WebDriver driver;
@@ -27,9 +30,11 @@ public class YourAddressesTask {
 		this.yourAddressesAppObject.getAliasTextField().sendKeys(DevTools.getNewAlias());
 		
 		DevTools.selectItemForVisibleTextInComboBox(this.yourAddressesAppObject.getStateComboBox(), state);
+		Report.log(Status.INFO, "", ScreenShot.capture(this.driver));
 	}
 
 	public void clickSaveButton() {
-		this.yourAddressesAppObject.getSaveButton().click();		
+		this.yourAddressesAppObject.getSaveButton().click();	
+		Report.log(Status.INFO, "", ScreenShot.capture(this.driver));
 	}
 }

@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import db.trainning.automationpractice.utils.DevTools;
+
 public class ShippingAppObject {	
 	private WebDriver driver;
 	
@@ -16,6 +18,6 @@ public class ShippingAppObject {
 	}
 	
 	public WebElement getProcessAddressButton() {
-		return this.driver.findElement(By.name("processCarrier"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.name("processCarrier"));
 	}
 }

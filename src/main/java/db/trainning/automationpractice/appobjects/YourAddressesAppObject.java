@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import db.trainning.automationpractice.utils.DevTools;
+
 public class YourAddressesAppObject {	
 	private WebDriver driver;
 	
@@ -12,11 +14,11 @@ public class YourAddressesAppObject {
 	}
 	
 	public WebElement getAddressTextField() {
-		return this.driver.findElement(By.id("address1"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("address1"));
 	}
 	
 	public WebElement getCityTextField() {
-		return this.driver.findElement(By.id("city"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("city"));
 	}
 	
 	public WebElement getStateComboBox() {
@@ -24,22 +26,22 @@ public class YourAddressesAppObject {
 	}
 		
 	public WebElement getPostalCodeTextField() {
-		return this.driver.findElement(By.id("postcode"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("postcode"));
 	}
 	
 	public WebElement getMobilePhoneTextField() {
-		return this.driver.findElement(By.id("phone_mobile"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("phone_mobile"));
 	}	
 	
 	public WebElement getAliasTextField() {
-		return this.driver.findElement(By.id("alias"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("alias"));
 	}
 
 	public WebElement getHomePhoneTextField() {
-		return this.driver.findElement(By.id("phone"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("phone"));
 	}
 	
 	public WebElement getSaveButton() {
-		return this.driver.findElement(By.id("submitAddress"));
+		return DevTools.waitUntilFifteenSecondsForClickability(this.driver,By.id("submitAddress"));
 	}
 }
