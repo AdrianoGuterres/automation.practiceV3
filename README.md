@@ -20,3 +20,4 @@ For this project the configurations were:
 
 ps: The compatibility of this project is with Java 8, some webdriver tools are based on new  
 features available from version 8 of java. 
+
