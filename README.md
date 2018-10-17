@@ -1,4 +1,4 @@
-# Automation Pratice
+# Automation Pratice  
 
 this is an example of using Selenium tools for the development of automated tests.
 
